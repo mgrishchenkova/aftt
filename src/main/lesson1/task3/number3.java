@@ -8,7 +8,7 @@ public class number3 {
 
     }
 
-    boolean a ( double n)
+    boolean a ( int n)
     {
         n=n%2;
         return (n!=0);
