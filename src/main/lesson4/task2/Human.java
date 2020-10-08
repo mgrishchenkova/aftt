@@ -1,9 +1,7 @@
-package main.lesson4.task1;
+package main.lesson4.task2;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Human {
     private String lastName;
@@ -54,12 +52,12 @@ public class Human {
     //геттеры
 
     public String getLastName() {
-        getPrint("фамилии", lastName);
+        getPrint("фамилии",lastName);
         return lastName;
     }
 
     public String getFirstName() {
-        getPrint("имени", firstName);
+        getPrint("имени",firstName);
         return firstName;
     }
 
@@ -81,7 +79,8 @@ public class Human {
     }
 
     public void setIncorrectPrint(String value) {
-
         System.out.printf("Введенное значение некорректно %s%n", value);
     }
 }
+
+
