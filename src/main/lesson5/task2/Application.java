@@ -13,6 +13,7 @@ public class Application {
                 System.out.printf("Имя: %s, Возраст: %d%n", catt.getName(), catt.getAge());
             } catch (NullPointerException exception) {
                 System.out.println("Возникла ошибка вывода информации: ссылка на null");
+                break;
 
             }
         }
