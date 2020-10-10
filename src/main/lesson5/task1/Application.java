@@ -5,14 +5,14 @@ import java.util.Random;
 public class Application {
     public static void main(String[] args) {
 
-        int n = new Random().nextInt(6) + 5;
-        int m = new Random().nextInt(6) + 5;
+        int n = new Random().nextInt(5) + 5;
+        int m = new Random().nextInt(5) + 5;
         int[] dividends = new int[m];
         int[] dividers = new int[n];
 
         System.out.println("Массив dividends");
     for (int i = 0; i < m; i++) {
-            dividends[i] = new Random().nextInt(6) + 4;
+            dividends[i] = new Random().nextInt(5) + 4;
             System.out.print(dividends[i]);
         }
 

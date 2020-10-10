@@ -8,7 +8,7 @@ public class Application {
         Cat cat4 = new Cat("Дуся", 4);
         Cat[] cats = {cat0, cat1, null, cat3, cat4};
 
-        for (Cat catt: cats){
+        for (Cat catt : cats) {
             try {
                 System.out.printf("Имя: %s, Возраст: %d%n", catt.getName(), catt.getAge());
             } catch (NullPointerException exception) {
