@@ -3,27 +3,32 @@ package main.lesson4.task4;
 public class Passport {
     String series;
     String number;
+    int i;
+    private static Passport[] unPassport = new Passport[40];
 
     Passport() {
 
     }
 
-    public void setSeries(String series) {
-       this.series=series;
-        int result = series.length();
-        if (result==4)
-        System.out.println("валидна");
-        else  System.out.println("невалидна");
+    public Passport setSeries(String series) {
+
+
+        if (series.matches("^\\d{4}$") && number == null)
+            this.series = series;
+        if (number != null & proverka(series, number))
+            this.series = series;
+        unPassport[i++] = this;
+        return this;
 
     }
 
-    public void setNumber(String number) {
-        this.number=number;
-        int result = number.length();
-        if (result== 6)
-
-        System.out.println("Номер валиден");
-         else  System.out.println("невалиден");
+    public Passport setNumber(String number) {
+        if (number.matches("^\\d{6}$") & series == null)
+            this.number = number;
+        if (series != null & proverka(series, number))
+            this.number = number;
+        unPassport[i++] = this;
+        return this;
     }
 
     public String getSeries() {
@@ -34,4 +39,17 @@ public class Passport {
         return number;
     }
 
+    private static boolean proverka(String series, String number) {
+        for (Passport pass : unPassport) {
+            if (pass == null) return true;
+            else {
+                if (pass.setNumber(number).equals(number) & pass.setSeries(series).equals(series)) return false;
+            }
+            return true;
+        }
+
+        return true;
+    }
 }
+
+

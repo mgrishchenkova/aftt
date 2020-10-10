@@ -9,11 +9,11 @@ public class Passport {
     Passport(String series, String number) throws PassportIllegalArgumentException, PassportAlreadyExistsException, PassportNullPointerException,NullPointerException{
        String regexSeries="^(\\d{2})-(\\d{2})$";
                String regexNumber="^(\\d{6})$";
-
+        if (series==null) throw new PassportSeriesNullPointerException();
+        if (number==null) throw  new PassportNumberNullPointerException();
             if (!series.matches(regexSeries)) throw new PassportSeriesArgumentException();
             if (!number.matches(regexNumber)) throw new PassportNumberArgumentException();
-if (series==null) throw new PassportSeriesNullPointerException();
-if (number==null) throw  new PassportNumberNullPointerException();
+
         for (Passport passport : passports) {
             if (passport == null) break;
             if (passport.series.equals(series) && passport.number.equals(number))
