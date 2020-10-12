@@ -6,20 +6,35 @@ public class Human {
     private static int age;
     Passport passport;
 
-    private void setLastName(String lastName){
+    public Human setLastName(String lastName){
         this.lastName=lastName;
+        return this;
     }
-    private void setFirstName(String firstName){
+    public Human setFirstName(String firstName){
         this.firstName=firstName;
+        return this;
     }
 
-    private void setAge(int age){
+    public Human setAge(int age){
         this.age=age;
+        return this;
     }
 
-    private void setPassport(Passport passport){
-        this.passport=passport;
-    }
+    public Human setPassport(Passport passport){
+        if (passport==null){
+            System.out.println("Не удалось прикрепить паспорт null");
+            return this;
+        }
+        if (passport.getNumber()!=null & passport.getSeries()!=null) {
+            System.out.printf("Прикрпелен паспорт с серией: %s и номером: %s к человеку %s%n",passport.getSeries(), passport.getNumber(), lastName,firstName);
+            this.passport = passport;
+        } else
+            System.out.printf("Ошибка: не удалось прикрепить паспорт c серией %s и номером %s%n",passport.getSeries(), passport.getNumber());
+            return this;
+        }
+
+
+
 
     public String getLastName(){
         return lastName;
