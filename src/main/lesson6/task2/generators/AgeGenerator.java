@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class AgeGenerator {
 
-    private static int generate(){
+    public static int generate(){
         return (new Random().nextInt(55)+20);
     }
 

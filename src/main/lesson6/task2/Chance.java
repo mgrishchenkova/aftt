@@ -1,12 +1,11 @@
 package main.lesson6.task2;
 
+import java.util.Random;
+
 public class Chance {
    public static boolean calculateChance(int percent){
-       boolean chance=false;
-       if ( percent>20) {
-           chance=true;
-       }
-       return chance;
+       int random = new Random().nextInt(100);
+       return percent >= random;
        }
 
 
