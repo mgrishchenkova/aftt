@@ -9,7 +9,7 @@ public class Application {
             persons.add(Person.random());
         }
 
-        // Считаем типы документов:
+
         Map<IdentityDocumentType, Integer> counters = new TreeMap<>();
         for (IdentityDocumentType documentType : IdentityDocumentType.values()) {
             counters.put(documentType, 0);
@@ -19,7 +19,7 @@ public class Application {
             counters.put(docType, counters.get(docType) + 1);
         }
 
-        // Создадим список кодов документа, отсортированный в порядке убывания:
+
         List<String> identityDocumentTypeCodes = new ArrayList<>();
         for (IdentityDocumentType documentType : IdentityDocumentType.values()) {
             identityDocumentTypeCodes.add(documentType.getIdDoc());
@@ -27,13 +27,13 @@ public class Application {
         Collections.sort(identityDocumentTypeCodes);
         Collections.reverse(identityDocumentTypeCodes);
 
-        // Выводим информацию на экран
+
         for (String code : identityDocumentTypeCodes) {
             IdentityDocumentType documentType = IdentityDocumentType.byCode(code);
             System.out.printf("%s: %d%n", code, counters.get(documentType));
         }
 
-        // Удаляем всех людей, у кого код документа не равен "21"
+
         Iterator<Person> iterator = persons.iterator();
         while (iterator.hasNext()) {
             Person person = iterator.next();
