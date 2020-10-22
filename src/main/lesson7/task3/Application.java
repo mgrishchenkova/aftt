@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Application {
     public static void main(String[] args) {
-        Position position = new Position("C1");
+        Position position = new Position("A2");
         ChessFigure king = new King(position);
         Set<Position> kingPos = king.getAvailableMoves();
         System.out.println();

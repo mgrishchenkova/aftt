@@ -12,7 +12,7 @@ public class   Position {
                 vertically=position.charAt(1);
                if (horizontally<'A' || horizontally>'H')
                    throw new IllegalArgumentException();
-        if (vertically<'1' || horizontally>'8')
+        if (vertically<'1' || vertically>'8')
             throw new IllegalArgumentException();
 
 

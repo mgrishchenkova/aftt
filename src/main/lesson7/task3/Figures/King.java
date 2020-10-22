@@ -20,16 +20,17 @@ public class King extends ChessFigure {
         for (Position candidate: allChess)
         if (isMove(position,candidate))
             addKing.add(candidate);
+
         return addKing;
     }
 
 
-    private boolean isMove(Position figurePosition, Position addKing) {
-        int dx = Math.abs(figurePosition.getHorizontally() - addKing.getHorizontally());
-        int dy = Math.abs(figurePosition.getVertically() - addKing.getVertically());
-        if (dx == 1 & dy == 0) return true;
-        if (dx == 0 & dy == 1) return true;
-        if (dx == 1 & dy == 1) return true;
+    private boolean isMove(Position figurePosition, Position candidate) {
+        int dx = Math.abs(figurePosition.getHorizontally() - candidate.getHorizontally());
+        int dy = Math.abs(figurePosition.getVertically() - candidate.getVertically());
+        if (dx == 0 && dy == 1) return true;
+        if (dx == 1 && dy == 0) return true;
+        if (dx == 1 && dy == 1) return true;
         return false;
     }
 }
