@@ -35,6 +35,8 @@ public ChessFigure(Player player,Position position){
 }
     public abstract Set<Position> getAvailableMoves();
 
+
+
 }
 
 

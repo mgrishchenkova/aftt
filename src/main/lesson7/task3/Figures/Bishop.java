@@ -1,4 +1,37 @@
 package main.lesson7.task3.Figures;
 
-public class Bishop {
+import main.lesson7.task3.chess.Chess;
+import main.lesson7.task3.chess.Position;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Bishop extends ChessFigure{
+
+    public Bishop(Position position){
+        super("Ладья", position);
+    }
+
+    @Override
+    public Set<Position> getAvailableMoves() {
+     Set<Position> allChess = Chess.getChess();
+     Set<Position> allBishop = new HashSet<>();
+     for (Position candidate: allChess)
+         if(isMove(position,candidate))
+             allBishop.add(candidate);
+         return allBishop;
+    }
+
+    private boolean isMove(Position figurePos, Position candidate){
+        int dx=Math.abs(figurePos.getHorizontally()-candidate.getHorizontally());
+        int dy=Math.abs(figurePos.getVertically()-candidate.getVertically());
+        if ((dx == 1 && dy == 1) ||
+                (dx == 2 && dy == 2) ||
+                (dx == 3 && dy == 3) ||
+                (dx == 4 && dy == 4) ||
+                (dx == 5 && dy == 5) ||
+                (dx == 6 && dy == 6) ||
+                (dx == 7 && dy == 7)) return true;
+        return false;
+    }
 }
