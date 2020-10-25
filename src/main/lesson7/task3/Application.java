@@ -10,11 +10,13 @@ import java.util.Set;
 
 public class Application {
     public static void main(String[] args) {
-        Position position = new Position("A2");
-     //   ChessFigure king = new King(position);
-        ChessFigure knight = new Knight(position);
-        Set<Position> knightPos = knight.getAvailableMoves();
-      //  Set<Position> kingPos = king.getAvailableMoves();
+
+
+        Position position = new Position("A1");
+      // ChessFigure king = new King(position);
+     ChessFigure knight = new Knight(position);
+ Set<Position> knightPos = knight.getAvailableMoves();
+        //Set<Position> kingPos = king.getAvailableMoves();
         System.out.println();
     }
 }
