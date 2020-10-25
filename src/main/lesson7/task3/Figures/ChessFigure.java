@@ -11,9 +11,9 @@ public abstract class ChessFigure {
     public Position position;
     public String name;
 
-    public ChessFigure(Player player, Position position, String name) {
-        this.player = player;
-        this.position = position;
+    public ChessFigure(Player player, Position position, String пешка) {
+        this.player = this.player;
+        this.position = this.position;
         this.name = name;
     }
 
