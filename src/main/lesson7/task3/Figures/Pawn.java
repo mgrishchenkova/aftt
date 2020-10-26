@@ -29,27 +29,26 @@ public class Pawn extends ChessFigure {
 
     private boolean isMoveWhite( Position figurePos, Position candidate) {
         int dx = Math.abs(figurePos.getHorizontally() - candidate.getHorizontally());
-        int dy = figurePos.getVertically() - candidate.getVertically();
-        if (figurePos.getVertically() ==2
-                && (dx == 0 && dy == -2))
+        int dy =  candidate.getVertically()-figurePos.getVertically();
+
+        if (figurePos.getVertically()=='2'
+                && (dx == 0 && dy == 2)|| (dx == 0 && dy == 1))
             return true;
-        if (figurePos.getVertically() ==2
-                && (dx == 0 && dy == -1))
-            return true;
-        if (figurePos.getVertically()!=2
-                && (dx == 0 && dy == -1))
-            return true;
+       if ('2'!=figurePos.getVertically()
+            && (dx == 0 && dy == 1))
+        return true;
+
         return false;
     }
 
         private boolean isMoveBlack( Position figurePos, Position candidate) {
             int dx = Math.abs(figurePos.getHorizontally() - candidate.getHorizontally());
             int dy = figurePos.getVertically() - candidate.getVertically();
-        if (figurePos.getVertically() == 7
-                && (dx == 0 && dy == 2 || dx == 0 && dy == -1))
+        if (figurePos.getVertically() == '7'
+                && (dx == 0 && dy == 2 || dx == 0 && dy == 1))
             return true;
-        if (figurePos.getVertically() != 7
-                && ( dx == 0 && dy == -1))
+        if (figurePos.getVertically() != '7'
+                && ( dx == 0 && dy == 1))
             return true;
         return false;
     }
