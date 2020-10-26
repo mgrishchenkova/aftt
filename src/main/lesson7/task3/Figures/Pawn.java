@@ -7,27 +7,50 @@ import main.lesson7.task3.chess.Position;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Pawn extends ChessFigure{
+public class Pawn extends ChessFigure {
 
-    public Pawn(Player player,Position position){
-        super(player,position,"Пешка");
+    public Pawn(Player player, Position position) {
+       super(player, position,"Пешка");
     }
 
     @Override
     public Set<Position> getAvailableMoves() {
         Set<Position> allChess = Chess.getChess();
-        Set<Position> allPawn= new HashSet<>();
-        for ( Position candidate: allChess)
-            if( isMove(player,position,candidate))
+        Set<Position> allPawn = new HashSet<>();
+        for (Position candidate : allChess) {
+            if (player == Player.WHITE && isMoveWhite(position, candidate))
                 allPawn.add(candidate);
+            if (player == Player.BLACK && isMoveBlack(position, candidate))
+                allPawn.add(candidate);
+
+        }
         return allPawn;
     }
 
-    private boolean isMove (Player player, Position figurePos, Position candidate){
-        int dx=figurePos.getHorizontally()-candidate.getHorizontally();
-        int dy=figurePos.getVertically()-candidate.getVertically();
-        if (player==Player.WHITE && (dx==0 && dy==1)) return true;
-        if (player==Player.BLACK && (dx==0 && dy==-1)) return true;
+    private boolean isMoveWhite( Position figurePos, Position candidate) {
+        int dx = Math.abs(figurePos.getHorizontally() - candidate.getHorizontally());
+        int dy = figurePos.getVertically() - candidate.getVertically();
+        if (figurePos.getVertically() ==2
+                && (dx == 0 && dy == -2))
+            return true;
+        if (figurePos.getVertically() ==2
+                && (dx == 0 && dy == -1))
+            return true;
+        if (figurePos.getVertically()!=2
+                && (dx == 0 && dy == -1))
+            return true;
+        return false;
+    }
+
+        private boolean isMoveBlack( Position figurePos, Position candidate) {
+            int dx = Math.abs(figurePos.getHorizontally() - candidate.getHorizontally());
+            int dy = figurePos.getVertically() - candidate.getVertically();
+        if (figurePos.getVertically() == 7
+                && (dx == 0 && dy == 2 || dx == 0 && dy == -1))
+            return true;
+        if (figurePos.getVertically() != 7
+                && ( dx == 0 && dy == -1))
+            return true;
         return false;
     }
 }
