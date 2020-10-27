@@ -7,7 +7,7 @@ public class MyArrayList<T> extends ArrayList<T> {
     @Override
     public T get(int index) {
         try {
-            System.out.println("Получен объект " + super.get(index) +"  из списка");
+            System.out.println("Получен объект " + super.get(index) + "  из списка");
             return super.get(index);
 
         } catch (IndexOutOfBoundsException exception) {
@@ -19,10 +19,9 @@ public class MyArrayList<T> extends ArrayList<T> {
     @Override
     public void add(int index, T element) {
         try {
-            System.out.println("Добавлен объект " + element +" в список на позицию "+index);
+            System.out.println("Добавлен объект " + element + " в список на позицию " + index);
             super.add(index, element);
-        }
-        catch (IndexOutOfBoundsException exception) {
+        } catch (IndexOutOfBoundsException exception) {
             super.add(0, element);
         }
 
