@@ -26,6 +26,9 @@ public class Application {
        // Set<Position> bishopPos = bishop.getAvailableMoves();
         // Set<Position> pawnPos = pawn.getAvailableMoves();
         Set<Position> pawnPos1 = pawn1.getAvailableMoves();
+
+
+
         System.out.println();
     }
 }
