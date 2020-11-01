@@ -5,10 +5,16 @@ import main.lesson7.task3.chess.Chess;
 import main.lesson7.task3.chess.Player;
 import main.lesson7.task3.chess.Position;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class Application {
     public static void main(String[] args) {
+        List<ChessFigure> figures = new ArrayList<>();
+      //figures.add(new King());
+
 
 
         Position position = new Position("E5");
@@ -28,7 +34,18 @@ public class Application {
         Set<Position> pawnPos1 = pawn1.getAvailableMoves();
 
 
+    }
 
-        System.out.println();
+    private static void printMoves(ChessFigure figure){
+        Set<Position> positions = figure.getAvailableMoves();
+        StringBuffer sb = new StringBuffer() .append(" (").append(figure.getPosition()).append("):");
+        Iterator<Position> iterator = positions.iterator();
+        while (iterator.hasNext()) {
+            Position position = iterator.next();
+            sb.append(", ").append(position.getPosition());
+        }
+        System.out.println(sb.toString().replaceFirst(",", ""));
+
+
     }
 }

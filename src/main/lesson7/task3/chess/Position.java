@@ -34,5 +34,8 @@ public class   Position {
        return String.valueOf(horizontally)+vertically;
     }
 
-
+    public String getPosition() {
+        String h = String.valueOf(horizontally);
+        return h + vertically;
+    }
 }
