@@ -9,10 +9,11 @@ public class AnnuityCredit  extends BaseCredit{
     }
 
     @Override
-    public List<Double> getMonthPayments(double amount, double rate, double duration) {
-        rate=rate/12;
+    public List<Double> getMonthPayments() {
+
         List<Double> paymentSchedule=new ArrayList<>();
-        for ( int i=0;i<=duration;i++ ){
+        for ( int i=0;i<duration;i++ ){
+            rate=rate/12;
             paymentSchedule.add(amount*((rate)+(rate/(Math.pow((1+rate),duration) +1))));
         }
         return paymentSchedule;

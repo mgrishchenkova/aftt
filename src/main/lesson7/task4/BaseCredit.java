@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseCredit {
-    private double amount;
-    private double duration;
-    private double rate;
+    protected double amount;
+    protected double duration;
+    protected double rate;
 
     public BaseCredit(double amount, double rate, double duration) {
         this.amount = amount;
@@ -14,13 +14,22 @@ public class BaseCredit {
         this.duration = duration;
     }
 
-    public List<Double> getMonthPayments(double amount, double rate, double duration) {
-List<Double> paymentSchedule = new ArrayList<>();
-for ( int i=0;i<=duration;i++) {
-    paymentSchedule.add(amount / duration);
-}
-return paymentSchedule;
-}
+    public List<Double> getMonthPayments() {
+        List<Double> paymentSchedule = new ArrayList<>();
+        for (int i = 0; i < duration; i++) {
+            paymentSchedule.add(amount / duration);
+        }
+        return paymentSchedule;
 
     }
+
+    public Double calculateOverpayment() {
+        Double amount = 0d;
+        for (Double currentPayment : getMonthPayments()) {
+            amount += currentPayment;
+        }
+        return amount - this.amount;
+    }
+
+}
 
