@@ -15,7 +15,7 @@ protected double amount;//	Сумма, свыше которой комисси�
         this.phoneNumber=phoneNumber;
     }
 
-    public abstract double sm();
+
     @Override
     public void topUp(){
 
