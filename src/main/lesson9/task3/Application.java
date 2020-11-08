@@ -15,10 +15,11 @@ public class Application {
                 OneParameterFigure oneParameterFigure = (OneParameterFigure) figure;
                 System.out.printf("Класс фигуры %s [%s] Длина - %s, Площадь - %s%n", figure.getClass().getSimpleName(), oneParameterFigure.getA(), figure.getLength(), figure.getArea());
             }
-
+        }
+            for (Figure figure : figures) {
             if (Generator.generateFigure() instanceof TwoParameterFigure) {
-              TwoParameterFigure twoParameterFigure = (TwoParameterFigure) figure;
-            System.out.printf("Класс фигуры %s [%s, %s]: Длина - %s, Площадь - %s%n", figure.getClass().getSimpleName(), twoParameterFigure.getC(), twoParameterFigure.getB(), figure.getLength(), figure.getArea());
+                TwoParameterFigure twoParameterFigure = (TwoParameterFigure) figure;
+                System.out.printf("Класс фигуры %s [%s, %s]: Длина - %s, Площадь - %s%n", figure.getClass().getSimpleName(), twoParameterFigure.getC(), twoParameterFigure.getB(), figure.getLength(), figure.getArea());
 
             }
         }
