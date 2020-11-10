@@ -12,9 +12,10 @@ public class AnnuityCredit  extends BaseCredit{
     public List<Double> getMonthPayments() {
 
         List<Double> paymentSchedule=new ArrayList<>();
+        rate=rate/100/12;
         for ( int i=0;i<duration;i++ ){
-            rate=rate/12;
-            paymentSchedule.add(amount*((rate)+(rate/(Math.pow((1+rate),duration) +1))));
+
+            paymentSchedule.add(amount*(rate+(rate/(Math.pow((1+rate),duration) -1))));
         }
         return paymentSchedule;
     }
