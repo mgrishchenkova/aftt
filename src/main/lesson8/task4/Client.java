@@ -8,4 +8,9 @@ public class Client extends Entity {
         super(name);
         this.address = address;
     }
+
+    @Override
+    public void validate() {
+
+    }
 }
