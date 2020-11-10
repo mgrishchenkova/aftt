@@ -1,9 +1,6 @@
 package main.lesson8.task1;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Application {
     public static void main(String[] args) {
@@ -13,15 +10,22 @@ public class Application {
         }
 
 //дописать дедубликацию
-       for(int i = 0; i < listPerson.size()-1; i++) {
-         if (listPerson.get(i).equals(listPerson.get(i + 1)))
-             listPerson.remove(i);
-            i--;
+        Set<Person> personSet = new HashSet<>();
+        for (int i = 0; i < listPerson.size(); i++) {
+            for (int j = 0; j < listPerson.size(); j++) {
+                Person lastName = listPerson.get(i);
+                Person firstNme = listPerson.get(j);
+                if (lastName.equals(firstNme)) personSet.add(lastName);
+            }
         }
 
-        Set<Person>  personSet = new HashSet<>();
-        for( int i=0;i<2000;i++){
-            personSet.add(new Person());
+        Iterator<Person> iterator = personSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        Set<Person> personSet1 = new HashSet<>();
+        for (int i = 0; i < 2000; i++) {
+            personSet1.add(new Person());
         }
         System.out.printf(String.valueOf(personSet.size()));
     }
