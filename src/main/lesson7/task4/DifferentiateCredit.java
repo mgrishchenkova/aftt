@@ -11,8 +11,11 @@ public class DifferentiateCredit extends BaseCredit {
     @Override
     public List<Double> getMonthPayments() {
         List<Double> paymentSchedule = new ArrayList<>();
+        double b=amount/duration;
+        rate=rate/100/12;
         for (int i = 0; i < duration; i++) {
-            paymentSchedule.add((amount / (rate + duration)) + (amount * rate / 100 * 12));
+
+            paymentSchedule.add(b+(amount -b*i)*rate);
 
         }
         return paymentSchedule;
