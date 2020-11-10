@@ -7,10 +7,14 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args) {
-        BaseCredit credit1 = new BaseCredit(300_000, 16.9, 12);
+        double amount = 300_000d;
+        double rate = 16.9d;
+        int duration = 12;
+        BaseCredit credit1 = new BaseCredit(amount,rate,duration);
 
-        DifferentiateCredit credit2 = new DifferentiateCredit(300_000, 16.9, 12);
-        AnnuityCredit credit3 = new AnnuityCredit(300_000, 16.9, 12);
+        DifferentiateCredit credit2 = new DifferentiateCredit(amount,rate,duration);
+        AnnuityCredit credit3 = new AnnuityCredit(amount,rate,duration
+        );
 
         List<Double> credits1 = credit1.getMonthPayments();
         List<Double> credits2 = credit2.getMonthPayments();

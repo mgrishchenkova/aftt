@@ -7,11 +7,10 @@ public class AnnuityCredit  extends BaseCredit{
     public AnnuityCredit(double amount, double rate, double duration) {
         super(amount, rate, duration);
     }
-
+    List<Double> paymentSchedule=new ArrayList<>();
     @Override
     public List<Double> getMonthPayments() {
 
-        List<Double> paymentSchedule=new ArrayList<>();
         rate=rate/100/12;
         for ( int i=0;i<duration;i++ ){
 
@@ -19,4 +18,14 @@ public class AnnuityCredit  extends BaseCredit{
         }
         return paymentSchedule;
     }
+
+    @Override
+    public Double calculateOverpayment() {
+
+
+           double sum =duration*paymentSchedule.get(0);
+        return sum -amount;
+
+    }
 }
+
