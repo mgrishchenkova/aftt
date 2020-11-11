@@ -20,4 +20,12 @@ public abstract class Entity implements Validatable {
     public void validate() {
         ValidatorStub.validateEntity(this);
     }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

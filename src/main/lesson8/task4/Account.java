@@ -4,8 +4,9 @@ import java.util.Objects;
 
 public class Account extends Entity{
     String accountNumber;
-    public Account(String name) {
+    public Account(String name, String ffff) {
         super(name);
+        this.accountNumber=accountNumber;
     }
 
     @Override
