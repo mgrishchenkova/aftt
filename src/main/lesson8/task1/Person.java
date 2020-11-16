@@ -8,13 +8,12 @@ public class Person {
     private String firstName;
 
     public Person() {
-        lastName = "фамилия" + new Random().nextInt(20)+1;
-        firstName= "имя"+new Random().nextInt(20)+1;
-
+        lastName = "фамилия" + (new Random().nextInt(20) + 1);
+        firstName = "имя" + (new Random().nextInt(20) + 1);
     }
 
     public String getLastName() {
-        return lastName ;
+        return lastName;
     }
 
     public String getFirstName() {
@@ -37,6 +36,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("Фамилия:%s, Имя:%s",getLastName(),getFirstName());
+        return String.format("Фамилия:%s, Имя:%s", getLastName(), getFirstName());
     }
 }

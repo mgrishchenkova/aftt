@@ -1,8 +1,8 @@
 package main.lesson8.task4;
 
 public abstract class Entity implements Validatable {
-    String uuid;
-    String name;
+    protected String uuid;
+    protected String name;
 
     public Entity(String name) {
         this.name = name;

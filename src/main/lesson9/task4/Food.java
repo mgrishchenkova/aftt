@@ -7,6 +7,10 @@ public abstract class Food {
         this.cookingTime = cookingTime;
     }
 
+    public Food() {
+
+    }
+
     public int getCookingTime() {
         return cookingTime;
     }

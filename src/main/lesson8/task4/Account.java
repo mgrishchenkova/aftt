@@ -2,11 +2,12 @@ package main.lesson8.task4;
 
 import java.util.Objects;
 
-public class Account extends Entity{
-    String accountNumber;
-    public Account(String name, String ffff) {
+public class Account extends Entity {
+    private String accountNumber;
+
+    public Account(String name, String accountNumber) {
         super(name);
-        this.accountNumber=accountNumber;
+        this.accountNumber = accountNumber;
     }
 
     @Override
@@ -20,6 +21,15 @@ public class Account extends Entity{
     @Override
     public int hashCode() {
         return Objects.hash(accountNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountNumber='" + accountNumber + '\'' +
+                ", uuid='" + uuid + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public String getAccountNumber() {

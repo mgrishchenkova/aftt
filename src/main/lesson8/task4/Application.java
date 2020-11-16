@@ -5,15 +5,17 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-       Entity account = new Account("ля ля", "ffff");
-       Entity account1 = new Account("nhekzk", "dcsdv");
+        Entity account = new Account("ля ля", "ffff");
+        Entity account1 = new Account("nhekzk", "dcsdv");
+        Entity account2 = new Account("nhekzk", "dcsdv");
 
 
-        List<Entity> entityList = new ArrayList<>();
-        entityList.add(account);
-        entityList.add(account1);
-for ( Entity entityList1:entityList){
-    entityList1.validate();
-}
+        List<Entity> entities = new ArrayList<>();
+        entities.add(account);
+        entities.add(account1);
+        entities.add(account2);
+        for (Entity entity : entities) {
+            entity.validate();
+        }
     }
 }
