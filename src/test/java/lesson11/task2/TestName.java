@@ -6,7 +6,7 @@ public class TestName {
     @Test
     public void testFirstNameCorrect() {
         Human human = new Human();
-       //human.setFirstName("Иван");
+        //human.setFirstName("Иван");
         //human.setFirstName("Ив");
         human.setFirstName("Ивансдлиннымименем");
         //human.setFirstName("Иван5аа");
