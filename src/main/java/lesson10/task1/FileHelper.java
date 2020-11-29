@@ -5,14 +5,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 public class FileHelper {
     public static Map<String, String> readFile(File file) throws IOException {
-        List<String> lines = Files.readAllLines(file.toPath());
+        List<String> lines;
+        lines = Files.readAllLines(Paths.get(file.getAbsolutePath()));
         Map<String, String> result = new HashMap<>();
         for (String pair : lines) {
             String key = pair.split("=")[0];
