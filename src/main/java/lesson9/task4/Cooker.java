@@ -14,7 +14,7 @@ public class Cooker {
         foodCook.add(food);
     }
 
-    public void clearFood(Food food) {
+    public void clearFood() {
         foodCook.clear();
     }
 

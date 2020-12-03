@@ -1,7 +1,7 @@
 package lesson9.task4;
 
 public class Fish extends Food{
-    public Fish(int cookingTime) {
+    public Fish() {
         super(40);
 
     }

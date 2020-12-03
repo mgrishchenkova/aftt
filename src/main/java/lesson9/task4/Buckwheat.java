@@ -1,7 +1,7 @@
 package lesson9.task4;
 
 public class Buckwheat extends Food{
-    public Buckwheat(int cookingTime) {
+    public Buckwheat() {
         super(20);
     }
 }
