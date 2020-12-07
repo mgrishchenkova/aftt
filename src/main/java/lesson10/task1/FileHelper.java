@@ -4,19 +4,22 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class FileHelper {
     public static Map<String, String> readFile(File file) throws IOException {
         List<String> lines;
-       lines = Files.readAllLines(Paths.get(file.getAbsolutePath()));
+       lines = Files.lines(Paths.get(file.getAbsolutePath()), Charset.forName("windows-1251")).collect(Collectors.toList());
         Map<String, String> result = new HashMap<>();
         for (String pair : lines) {
             String key = pair.split("=")[0];
@@ -32,8 +35,8 @@ public class FileHelper {
     public static void saveFile(File file, Map<String, String> map) throws IOException {
         StringBuilder sb = new StringBuilder().append("{").append(System.lineSeparator());
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            sb.append("\"").append(entry.getKey()).append("\"").append(":").append("\"").
-                    append(format(entry.getValue())).append("\"").append(",").append(System.lineSeparator());
+            sb.append("\"").append(entry.getKey()).append("\"").append(":").
+                    append(format(entry.getValue())).append(",").append(System.lineSeparator());
         }
         sb.deleteCharAt(sb.lastIndexOf(","));
         sb.append("}");

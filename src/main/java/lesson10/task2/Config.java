@@ -19,7 +19,7 @@ public class Config {
     static {
         loadProperties(properties);
 
-        OUTPUT_FILE = new File(getProperty("output.file","k"));
+       OUTPUT_FILE = new File(getProperty("output.file","k"));
         LINES_AMOUNT = getIntegerProperty("lines.amount",0);
         LINES_MIN_LENGTH = getIntegerProperty("lines.max.length",1);
         LINES_MAX_LENGTH = getIntegerProperty("lines.min.length",2);
