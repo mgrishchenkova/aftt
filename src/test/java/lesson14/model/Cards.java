@@ -3,12 +3,12 @@ package lesson14.model;
 public class Cards {
    private String type;
    private  String cardNumber;
-   private int endDateMonth;
-   private int endDateYear;
-   private int code;
-   private int accountNumber;
+   private String endDateMonth;
+   private String endDateYear;
+   private String code;
+   private String accountNumber;
 
-    public Cards(String type, String cardNumber, int endDateMonth, int endDateYear, int code, int accountNumber) {
+    public Cards(String type, String cardNumber, String endDateMonth, String endDateYear, String code, String accountNumber) {
         this.type = type;
         this.cardNumber = cardNumber;
         this.endDateMonth = endDateMonth;
@@ -33,35 +33,35 @@ public class Cards {
         this.cardNumber = cardNumber;
     }
 
-    public int getEndDateMonth() {
+    public String getEndDateMonth() {
         return endDateMonth;
     }
 
-    public void setEndDateMonth(int endDateMonth) {
+    public void setEndDateMonth(String endDateMonth) {
         this.endDateMonth = endDateMonth;
     }
 
-    public int getEndDateYear() {
+    public String getEndDateYear() {
         return endDateYear;
     }
 
-    public void setEndDateYear(int endDateYear) {
+    public void setEndDateYear(String endDateYear) {
         this.endDateYear = endDateYear;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 }

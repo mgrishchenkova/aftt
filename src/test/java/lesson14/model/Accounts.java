@@ -3,7 +3,7 @@ package lesson14.model;
 public class Accounts {
     private String accountType;
     private String accountNumber;
-    private double accountBalance;
+    private Double accountBalance;
 
     public Accounts(String accountType, String accountNumber, double accountBalance) {
         this.accountType = accountType;

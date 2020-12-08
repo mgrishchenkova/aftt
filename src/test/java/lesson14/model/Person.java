@@ -3,18 +3,18 @@ package lesson14.model;
 import java.util.List;
 
 public class Person {
-    private String LastName;
-    private String FirstName;
-    private String Patronymic;
+    private String lastName;
+    private String firstName;
+    private String patronymic;
     private Passport passport;
     private List<Properties> properties;
     private List<Accounts> accounts;
     private List<Cards> cards;
 
     public Person(String lastName, String firstName, String patronymic, Passport passport, List<Properties> properties, List<Accounts> accounts, List<Cards> cards) {
-        LastName = lastName;
-        FirstName = firstName;
-        Patronymic = patronymic;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
         this.passport = passport;
         this.properties = properties;
         this.accounts = accounts;
@@ -22,27 +22,27 @@ public class Person {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getPatronymic() {
-        return Patronymic;
+        return patronymic;
     }
 
     public void setPatronymic(String patronymic) {
-        Patronymic = patronymic;
+        this.patronymic = patronymic;
     }
 
     public Passport getPassport() {
