@@ -2,13 +2,13 @@ package lesson14.model;
 
 public class Passport {
 
-    private int series;
-    private int number;
+    private String series;
+    private String number;
     private String issuer;
     private String issueDate;
     private String issueCode;
 
-    public Passport(int series, int number, String issuer, String issueDate, String issueCode) {
+    public Passport(String series, String number, String issuer, String issueDate, String issueCode) {
         this.series = series;
         this.number = number;
         this.issuer = issuer;
@@ -16,19 +16,19 @@ public class Passport {
         this.issueCode = issueCode;
     }
 
-    public int getSeries() {
+    public String getSeries() {
         return series;
     }
 
-    public void setSeries(int series) {
+    public void setSeries(String series) {
         this.series = series;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
