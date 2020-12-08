@@ -19,4 +19,24 @@ public class Task1 {
             .count();
     Assertions.assertEquals(3, count);
 }
+
+    @Test
+    void testAccountCards() {
+        long count = persons.stream()
+                .filter(person -> person.getLastName().equals("Васильев"))
+                .filter(person -> person.getCards().size()!=person.getAccounts().size())
+                .peek(person -> System.out.printf("%s %s %s%n", person.getLastName(), person.getFirstName(), person.getPatronymic()))
+                .count();
+        Assertions.assertEquals(10, count);
+    }
+    @Test
+    void testSeries() {
+        long count = persons.stream()
+                .filter(person -> person.getPassport() != null)
+                .filter(person -> person.getPassport().getSeries().startsWith("00"))
+                //.limit(5)
+                .peek(person -> System.out.printf("%s %s %s%n", person.getLastName(), person.getFirstName(), person.getPatronymic()))
+                .count();
+        Assertions.assertEquals(5, count);
+    }
 }
