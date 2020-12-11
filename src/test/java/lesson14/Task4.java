@@ -34,7 +34,8 @@ public class Task4 {
         System.out.println(mathSeries);
         System.out.println(noSeries);
     }
-    private Boolean activCards(Cards card){
+
+    private Boolean activeCards(Cards card) {
         try {
             Date cardDate = new SimpleDateFormat("MM.yy").parse(card.getEndDateMonth() + "." + card.getEndDateYear());
             return cardDate.after(new Date());
@@ -42,11 +43,11 @@ public class Task4 {
             throw new RuntimeException();
         }
     }
-  @Test
-    void testCards()
-    {
+
+    @Test
+    void testCards() {
         long count = persons.stream()
-                .filter(person1 -> person1.getCards()!=null)
+                .filter(person1 -> person1.getCards() != null)
                 .count();
         System.out.println(count);
 
