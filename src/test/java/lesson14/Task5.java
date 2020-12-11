@@ -1,6 +1,7 @@
 package lesson14;
 
 import lesson14.helpers.JsonHelper;
+import lesson14.model.Accounts;
 import lesson14.model.Person;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,7 @@ public class Task5 {
 
         .filter(person1 -> !person1.getAccounts().isEmpty())
                 .filter(person1 -> person1.getAccounts().stream()
-                        .map(Account -> Account.getAccountBalance())
+                        .map(Accounts::getAccountBalance)
                         .reduce((balance1, balance2) -> balance1 + balance2)
                         .orElseThrow(() -> new IllegalStateException()) <= 2100000)
         .count();

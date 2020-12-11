@@ -36,6 +36,7 @@ public class Task4 {
     }
 
     private Boolean activeCards(Cards card) {
+        boolean isActive;
         try {
             Date cardDate = new SimpleDateFormat("MM.yy").parse(card.getEndDateMonth() + "." + card.getEndDateYear());
             return cardDate.after(new Date());
@@ -50,6 +51,8 @@ public class Task4 {
                 .filter(person1 -> person1.getCards() != null)
                 .count();
         System.out.println(count);
+
+       //онвелс ме пюанрюер????
 
 
     }
