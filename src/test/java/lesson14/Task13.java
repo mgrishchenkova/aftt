@@ -11,7 +11,7 @@ public class Task13 {
     List<Person> persons = PersonFilterHelper.getFilteredPersons();
 
     @Test
-    void testOutputPass() {
+    void testOutputPassSeries() {
         persons.stream()
                 .sorted((p1, p2) -> {
                     if (p1.getPassport().getSeries().equals(p2.getPassport().getSeries()))
