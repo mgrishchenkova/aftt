@@ -13,7 +13,7 @@ public class TestGeneratorString {
             int end = new Random().nextInt(45);
             String randomTest = Generator.randomString(15, 45);
            // System.out.println(randomTest);
-            Assertions.assertTrue(randomTest.matches("[A-Da-d]"));
+            Assertions.assertTrue(randomTest.matches("^[A-Za-z]$"));
         }
     }
 }

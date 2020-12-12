@@ -1,26 +1,28 @@
 package lesson11.task4;
 
 public class Passport {
-    private int series;
-    private int number;
+    private String series;
+    private String number;
 
     public Passport() {
 
     }
 
-    public int getSeries() {
+    public String getSeries() {
         return series;
     }
 
-    public void setSeries(int series) {
+    public Passport setSeries(String series) {
         this.series = series;
+        return this;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public Passport setNumber(String number) {
         this.number = number;
+        return this;
     }
 }

@@ -3,49 +3,58 @@ package lesson11.task4;
 import java.util.Date;
 
 public class Person {
-    private String lastName;
     private String firstName;
-    private String middleName;
-    private Date date;
+    private String lastName;
+    private String patronymicName;
+    private Date birthDate;
     private Passport passport;
 
-    public String getLastName() {
-        return lastName;
-    }
+    public Person() {
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public Person setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public Person setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
     }
 
-    public Date getDate() {
-        return date;
+    public String getPatronymicName() {
+        return patronymicName;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public Person setPatronymicName(String patronymicName) {
+        this.patronymicName = patronymicName;
+        return this;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public Person setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+        return this;
     }
 
     public Passport getPassport() {
         return passport;
     }
 
-    public void setPassport(Passport passport) {
+    public Person setPassport(Passport passport) {
         this.passport = passport;
+        return this;
     }
 }
