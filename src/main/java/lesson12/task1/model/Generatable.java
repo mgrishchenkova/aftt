@@ -1,4 +1,7 @@
 package lesson12.task1.model;
 
-public interface Generatable {
+import org.apache.poi.ss.formula.functions.T;
+
+public interface Generatable <T extends Generatable> {
+    T generate();
 }

@@ -6,4 +6,9 @@ import java.util.List;
 
 public class Flat  implements Generatable {
     List<Room> rooms;
+
+    @Override
+    public Generatable generate() {
+        return null;
+    }
 }
