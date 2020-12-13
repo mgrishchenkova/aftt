@@ -1,5 +1,6 @@
 package lesson12.task1.helpers;
 
+import com.fasterxml.jackson.databind.JsonMappingException;
 import lesson12.task1.model.Generatable;
 import org.apache.poi.ss.formula.functions.T;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -9,11 +10,24 @@ public class XmlHelper implements SerializeHelper {
 
     @Override
     public Generatable deserialize(String data, Class clazz) {
+        XmlMapper mapXml = new XmlMapper();
+        try {
+            return (Generatable) mapXml.readValue(data, clazz);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Невозможно десериализовать объект");
+
+        }
 
     }
 
     @Override
     public String serialize(Generatable object) {
-        return null;
+        XmlMapper xmlMapper = new XmlMapper();
+        try {
+            return xmlMapper.writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Невозможно сериализовать объект");
+        }
     }
 }

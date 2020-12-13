@@ -16,6 +16,6 @@ public class JsonHelper implements SerializeHelper{
 
     @Override
     public String serialize(Generatable object) {
-        return new Gson().fromJson(object);
+        return new Gson().toJson(object);
     }
 }
