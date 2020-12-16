@@ -23,15 +23,15 @@ public class TestDesJson {
         Assertions.assertEquals(5, room.getHeight());
     }
     @Test
-    void testDesRom() throws IOException {
-        String json = String.join("", Files.lines(Paths.get("src/test/java/lesson12/task1/room.json"), Charset.forName("windows-1251")).collect(Collectors.toList()));
+    void testDesFlat() throws IOException {
+        String json = String.join("", Files.lines(Paths.get("src/test/java/lesson12/task1/flat.json"), Charset.forName("windows-1251")).collect(Collectors.toList()));
         Flat flat = (Flat) jsonHelper.deserialize(json,Flat.class);
         Assertions.assertEquals(4,flat.getRooms().get(0).getWidth());
 
     }
     @Test
     void testSerHouse() throws IOException {
-        String json = String.join("", Files.lines(Paths.get("src/test/java/lesson12/task1/room.json"), Charset.forName("windows-1251")).collect(Collectors.toList()));
+        String json = String.join("", Files.lines(Paths.get("src/test/java/lesson12/task1/house.json"), Charset.forName("windows-1251")).collect(Collectors.toList()));
         House house = (House) jsonHelper.deserialize(json,House.class);
         Assertions.assertEquals(3,house.getFlats().get(0).getRooms().get(0).getWidth());
 

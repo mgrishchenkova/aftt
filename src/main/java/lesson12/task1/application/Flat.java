@@ -22,10 +22,8 @@ public class Flat  implements Generatable {
     }
 
     @Override
-    public Generatable generate() {
-        this.rooms= new ArrayList<>();
-        rooms.add(new Room());
-        rooms.add(new Room());
+    public Flat generate() {
+        this.rooms=Arrays.asList(new Room().generate(),new Room().generate());
         return this;
     }
 }

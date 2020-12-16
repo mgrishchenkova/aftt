@@ -21,14 +21,8 @@ public class House implements Generatable {
     }
 
     @Override
-    public Generatable generate() {
-        this.flats= Arrays.asList(new Flat(),new Flat(),new Flat());
-        this.flats=new ArrayList<>();
-        flats.add(new Flat());
-        flats.add(new Flat());
-        flats.add(new Flat());
-        flats.add(new Flat());
-        flats.add(new Flat());
+    public House generate() {
+        this.flats= Arrays.asList(new Flat().generate(),new Flat().generate(),new Flat().generate(),new Flat().generate(),new Flat().generate());
         return this;
     }
 }

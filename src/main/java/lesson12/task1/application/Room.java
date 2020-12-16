@@ -24,7 +24,7 @@ public class Room implements Generatable {
     }
 
     @Override
-    public Generatable generate() {
+    public Room generate() {
 
         width = 5;
         height = 3;
