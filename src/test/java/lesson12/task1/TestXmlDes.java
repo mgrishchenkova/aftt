@@ -12,14 +12,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class TestXmlDes {
-    private final XmlHelper helper = new XmlHelper();
-    private final String ROOM_PATH = "src/test/java/lesson12/task1/room.xml";
-    private final String FLAT_PATH = "src/test/java/lesson12/task1/flat.xml";
-    private final String HOUSE_PATH = "src/test/java/lesson12/task1/house.xml";
+
 
    @Test
     void deserializationRoomTest() throws IOException {
-        String xml = String.join("", Files.readAllLines(Paths.get(ROOM_PATH)));
+        XmlHelper helper = new XmlHelper();
+        String xml = String.join("", Files.readAllLines(Paths.get("src/test/java/lesson12/task1/room.xml")));
         Room room = (Room) helper.deserialize(xml, Room.class);
         Assertions.assertEquals(6, room.getWidth());
         Assertions.assertEquals(5, room.getHeight());
@@ -27,7 +25,8 @@ public class TestXmlDes {
 
     @Test
     void deserializationFlatTest() throws IOException {
-        String xml = String.join("", Files.readAllLines(Paths.get(FLAT_PATH)));
+        XmlHelper helper = new XmlHelper();
+        String xml = String.join("", Files.readAllLines(Paths.get("src/test/java/lesson12/task1/flat.xml")));
         Flat flat = (Flat) helper.deserialize(xml, Flat.class);
         Assertions.assertEquals(3, flat.getRooms().size());
         Assertions.assertEquals(4, flat.getRooms().get(0).getWidth());
@@ -40,7 +39,8 @@ public class TestXmlDes {
 
     @Test
     void deserializationHouseTest() throws IOException {
-        String json = String.join("", Files.readAllLines(Paths.get(HOUSE_PATH)));
+        XmlHelper helper = new XmlHelper();
+        String json = String.join("", Files.readAllLines(Paths.get("src/test/java/lesson12/task1/house.xml")));
         House house = (House) helper.deserialize(json, House.class);
         // House:
         Assertions.assertEquals(3, house.getFlats().size());

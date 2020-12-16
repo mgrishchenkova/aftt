@@ -15,10 +15,9 @@ public class TestSerXml {
     @Test
     void testSerXml() throws IOException {
         XmlHelper helper = new XmlHelper();
-        String EXPECTED_RESULT_FILE_PATH = "src/test/java/lesson12/task1/expected_xml.txt";
         House house = new House().generate();
-        String actualHouseXml = helper.serialize(house);
-        String expectedHouseXml = Files.readAllLines(Paths.get(EXPECTED_RESULT_FILE_PATH)).get(0);
-        Assertions.assertEquals(expectedHouseXml, actualHouseXml);
+        String inputXml = helper.serialize(house);
+        String outputXml = Files.readAllLines(Paths.get("src/test/java/lesson12/task1/expected_xml.txt")).get(0);
+        Assertions.assertEquals(outputXml, inputXml);
     }
 }
