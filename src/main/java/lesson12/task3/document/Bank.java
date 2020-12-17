@@ -19,17 +19,18 @@ public class Bank {
         this.placeType = placeType;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bank bank = (Bank) o;
-        return id.equals(bank.id) &&
-                version.equals(bank.version) &&
-                bic.equals(bank.bic) &&
-                place.equals(bank.place) &&
-                name.equals(bank.name) &&
-                placeType.equals(bank.placeType);
+        return Objects.equals(id, bank.id) &&
+                Objects.equals(version, bank.version) &&
+                Objects.equals(bic, bank.bic) &&
+                Objects.equals(place, bank.place) &&
+                Objects.equals(name, bank.name) &&
+                Objects.equals(placeType, bank.placeType);
     }
 
     @Override

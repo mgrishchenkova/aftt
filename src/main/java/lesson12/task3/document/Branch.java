@@ -31,15 +31,15 @@ public class Branch {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Branch branch = (Branch) o;
-        return id.equals(branch.id) &&
-                version.equals(branch.version) &&
-                headBranch.equals(branch.headBranch) &&
-                bic.equals(branch.bic) &&
-                shortName.equals(branch.shortName) &&
-                timeZone.equals(branch.timeZone) &&
-                branchAddresses.equals(branch.branchAddresses) &&
-                currencyTrifle.equals(branch.currencyTrifle) &&
-                code_TFU.equals(branch.code_TFU);
+        return Objects.equals(id, branch.id) &&
+                Objects.equals(version, branch.version) &&
+                Objects.equals(headBranch, branch.headBranch) &&
+                Objects.equals(bic, branch.bic) &&
+                Objects.equals(shortName, branch.shortName) &&
+                Objects.equals(timeZone, branch.timeZone) &&
+                Objects.equals(branchAddresses, branch.branchAddresses) &&
+                Objects.equals(currencyTrifle, branch.currencyTrifle) &&
+                Objects.equals(code_TFU, branch.code_TFU);
     }
 
     @Override

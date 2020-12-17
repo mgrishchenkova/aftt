@@ -10,12 +10,12 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
 public class TestHelperJson {
-    private final String PATH = "src/main/java/lesson12/task2/data.xlsx";
+
 
  @Test
 
-    void jsonTestUsersSheet() throws IOException {
-        String result = Helper.getJsonArrayFromXls(PATH, "users");
+    void testUsers() throws IOException {
+        String result = Helper.getJsonArrayFromXls("src/main/java/lesson12/task2/data.xlsx", "users");
 
         JsonElement element = JsonParser.parseString(result);
         JsonArray array = (JsonArray) element;
@@ -61,8 +61,8 @@ public class TestHelperJson {
 
     @Test
 
-    void jsonTestProjectSheet() throws IOException {
-        String result = Helper.getJsonArrayFromXls(PATH, "projects");
+    void testProject() throws IOException {
+        String result = Helper.getJsonArrayFromXls("src/main/java/lesson12/task2/data.xlsx", "projects");
 
         JsonElement element = JsonParser.parseString(result);
         JsonArray array = (JsonArray) element;
@@ -103,8 +103,8 @@ public class TestHelperJson {
     }
 
     @Test
-    void jsonTestRolesSheet() throws IOException {
-        String result = Helper.getJsonArrayFromXls(PATH, "roles");
+    void testRoles() throws IOException {
+        String result = Helper.getJsonArrayFromXls("src/main/java/lesson12/task2/data.xlsx", "roles");
 
         JsonElement element = JsonParser.parseString(result);
         JsonArray array = (JsonArray) element;
@@ -133,7 +133,7 @@ public class TestHelperJson {
                     Assertions.assertEquals("0", object.get("builtin").getAsString());
                     break;
                 default:
-                    Assertions.fail("Такого id не было в примере в Excel-документе");
+                    Assertions.fail("ОШИБКА! ТАКОЕ ЗНАЧЕНИЕ ОТСУТСВУЕТ!");
             }
         }
     }

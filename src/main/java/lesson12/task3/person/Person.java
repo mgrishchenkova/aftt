@@ -33,56 +33,57 @@ public class Person {
         return Objects.hash(name, age, mother, children, married, dog);
     }
 
-    public void setName(String name) {
+    public Person setName(String name) {
         this.name = name;
+        return this;
     }
 
     public Integer getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public Person setAge(Integer age) {
         this.age = age;
+        return this;
     }
 
     public Mother getMother() {
         return mother;
     }
 
-    public void setMother(Mother mother) {
+    public Person setMother(Mother mother) {
         this.mother = mother;
+        return this;
     }
 
     public List<String> getChildren() {
         return children;
     }
 
-    public void setChildren(List<String> children) {
+    public Person setChildren(List<String> children) {
         this.children = children;
+        return this;
     }
 
     public Boolean getMarried() {
         return married;
     }
 
-    public void setMarried(Boolean married) {
+    public Person setMarried(Boolean married) {
         this.married = married;
+        return this;
     }
 
     public Object getDog() {
         return dog;
     }
 
-    public void setDog(Object dog) {
+    public Person setDog(Object dog) {
         this.dog = dog;
+        return this;
     }
 
-    public Person(String name, Integer age, Mother mother, List<String> children, Boolean married, Object dog) {
-        this.name = name;
-        this.age = age;
-        this.mother = mother;
-        this.children = children;
-        this.married = married;
-        this.dog = dog;
+    public Person() {
+
     }
 }

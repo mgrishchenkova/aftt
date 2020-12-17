@@ -16,8 +16,8 @@ public class TestSerJson {
     void testSerJson() throws IOException {
         JsonHelper helper = new JsonHelper();
         House house = new House().generate();
-        String actualHouseJson = helper.serialize(house);
-        String expectedHouseJson = Files.readAllLines(Paths.get("src/test/java/lesson12/task1/expected_json.txt")).get(0);
-        Assertions.assertEquals(expectedHouseJson, actualHouseJson);
+        String actual = helper.serialize(house);
+        String expected = Files.readAllLines(Paths.get("src/test/java/lesson12/task1/expected_json.txt")).get(0);
+        Assertions.assertEquals(expected, actual);
     }
 }

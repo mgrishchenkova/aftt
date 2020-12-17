@@ -6,9 +6,8 @@ public class Mother {
     private String name;
     private Integer age;
 
-    public Mother(String name, Integer age) {
-        this.name = name;
-        this.age = age;
+    public Mother() {
+
     }
 
     @Override
@@ -29,15 +28,17 @@ public class Mother {
         return name;
     }
 
-    public void setName(String name) {
+    public Mother setName(String name) {
         this.name = name;
+        return this;
     }
 
     public Integer getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public Mother setAge(Integer age) {
         this.age = age;
+        return this;
     }
 }
