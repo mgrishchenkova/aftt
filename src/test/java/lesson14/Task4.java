@@ -47,12 +47,30 @@ public class Task4 {
 
     @Test
     void testCards() {
-        long count = persons.stream()
-                .filter(person1 -> person1.getCards() != null)
+        long countAll = persons.stream()
+                .filter(person1 -> !person1.getCards().isEmpty())
                 .count();
-        System.out.println(count);
+        System.out.println(countAll);
+        long activeCard=persons.stream()
+                .filter(person -> !person.getCards().isEmpty())
+                .filter(person -> person.getCards().stream()
+                .allMatch(this::activeCards))
+                .count();
+        System.out.println(activeCard);
+        long inActiveCard=persons.stream()
+                .filter(person -> !person.getCards().isEmpty())
+                .filter(person -> person.getCards().stream()
+                        .noneMatch(this::activeCards))
+                .count();
+        System.out.println(inActiveCard);
+        long allCards = persons.stream()
+                .filter(person -> !person.getCards().isEmpty())
+                .filter(person -> person.getCards().stream().anyMatch(this::activeCards)
+                && person.getCards().stream().anyMatch(cards -> !activeCards(cards)))
+                .count();
+        System.out.println(allCards);
 
-       //онвелс ме пюанрюер????
+       Assertions.assertEquals(462,activeCard+inActiveCard+allCards);
 
 
     }
